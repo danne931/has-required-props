@@ -29,12 +29,12 @@ test('false if empty val passed for props', t => {
   t.false(hasRequiredProps(['a'], null))
 })
 
-test('return false if props are missing required props', t => {
+test('false if props are missing required props', t => {
   const requiredProps = ['a', 'c']
   t.false(hasRequiredProps(requiredProps, o))
 })
 
-test('return true if all required props on object', t => {
+test('true if all required props on object', t => {
   const requiredProps = ['a']
   t.true(hasRequiredProps(requiredProps, o))
 })
@@ -44,14 +44,22 @@ test('test nested prop validation', t => {
   t.true(hasRequiredProps(requiredProps, nested))
 })
 
-test('return true if missing required props on some object in array', t => {
+test('true if missing required props on some object in array', t => {
   const arr = [o, { a: 1 }]
   const requiredProps = ['a', 'b']
   t.false(hasRequiredProps(requiredProps, arr))
 })
 
-test('return true if all required props on all objects in array', t => {
+test('true if all required props on all objects in array', t => {
   const arr = [o, o]
   const requiredProps = ['a', 'b']
   t.true(hasRequiredProps(requiredProps, arr))
+})
+
+test('false if empty string as requiredProps', t => {
+  t.false(hasRequiredProps('   ', { a: 1 }))
+})
+
+test('true if required props (string) in array', t => {
+  t.true(hasRequiredProps('a', { a: 1 }))
 })

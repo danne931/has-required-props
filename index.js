@@ -1,6 +1,6 @@
 import get from 'lodash/get'
 
-const isEmpty = props => {
+const isEmptyObject = props => {
   if (props == null) return true
   return Array.isArray(props)
     ? props.length === 0
@@ -8,12 +8,15 @@ const isEmpty = props => {
 }
 
 const _hasRequiredProps = requiredProps => props =>
-  requiredProps.every(prop => get(props, prop) !== undefined)
+  typeof requiredProps === 'string'
+    ? get(props, requiredProps) !== undefined
+    : requiredProps.every(key => get(props, key) !== undefined)
 
 export default function hasRequiredProps (requiredProps, props) {
-  if (arguments.length === 0 || isEmpty(props)) return false
-  if (isEmpty(requiredProps)) return true
-  const check = _hasRequiredProps(requiredProps)
+  if (arguments.length === 0 || isEmptyObject(props)) return false
+  if (isEmptyObject(requiredProps)) return true
+  if (typeof props === 'string' && props.trim() === '') return false
 
+  const check = _hasRequiredProps(requiredProps)
   return Array.isArray(props) ? props.every(check) : check(props)
 }
