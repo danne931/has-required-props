@@ -1,5 +1,5 @@
 import test from 'ava'
-import hasRequiredProps from '..'
+import hasRequiredProps from '../index'
 
 const o = {
   a: 1,
@@ -8,7 +8,7 @@ const o = {
 
 test('should fail if props are missing required props', t => {
   const requiredProps = ['a', 'c']
-  t.false(hasRequiredProps(o, requiredProps))
+  t.false(hasRequiredProps({ props: o, requiredProps }))
 })
 
 test('should pass if all required props on object', t => {
