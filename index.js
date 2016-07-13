@@ -11,7 +11,8 @@ const _hasRequiredProps = requiredProps => props =>
   requiredProps.every(prop => get(props, prop) !== undefined)
 
 export default function hasRequiredProps (requiredProps, props) {
-  if (isEmpty(props) || isEmpty(requiredProps)) return false
+  if (arguments.length === 0 || isEmpty(props)) return false
+  if (isEmpty(requiredProps)) return true
   const check = _hasRequiredProps(requiredProps)
 
   return Array.isArray(props) ? props.every(check) : check(props)
