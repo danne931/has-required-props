@@ -10,7 +10,7 @@ const isEmpty = props => {
 const _hasRequiredProps = requiredProps => props =>
   requiredProps.every(prop => get(props, prop) !== undefined)
 
-export default function hasRequiredProps ({ props, requiredProps } = {}) {
+export default function hasRequiredProps (requiredProps, props) {
   if (isEmpty(props) || isEmpty(requiredProps)) return false
   const check = _hasRequiredProps(requiredProps)
 
