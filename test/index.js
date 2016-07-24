@@ -63,3 +63,12 @@ test('false if empty string as requiredProps', t => {
 test('true if required props (string) in array', t => {
   t.true(hasRequiredProps('a', { a: 1 }))
 })
+
+test('only check own props', t => {
+  const o = Object.create({ a: 1 })
+
+  t.false(hasRequiredProps('a', o))
+
+  o.a = 3
+  t.true(hasRequiredProps('a', o))
+})
