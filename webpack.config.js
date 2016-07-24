@@ -12,7 +12,7 @@ var config = {
     ]
   },
   output: {
-    library: 'has-props',
+    library: 'hasRequiredProps',
     libraryTarget: 'umd'
   },
   plugins: []

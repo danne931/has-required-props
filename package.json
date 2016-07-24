@@ -1,8 +1,13 @@
 {
   "name": "has-required-props",
   "version": "0.0.1",
-  "description": "",
+  "description": "Assert that your object props have non-undefined values for each required prop",
   "main": "lib/index.js",
+  "files": [
+    "dist",
+    "lib",
+    "index.js"
+  ],
   "dependencies": {
     "lodash": "^4.13.1"
   },
@@ -24,7 +29,7 @@
     "clean": "rimraf dist lib",
     "test": "ava",
     "check": "standard && npm test",
-    "build:commonjs": "cross-env BABEL_ENV=commonjs babel index.js --out-dir lib",
+    "build:commonjs": "babel index.js --out-dir lib",
     "build:umd": "cross-env NODE_ENV=development webpack --display-modules index.js dist/has-required-props.js",
     "build:umd:min": "cross-env NODE_ENV=production webpack --display-modules index.js dist/has-required-props.min.js",
     "build": "npm run clean && npm run build:commonjs && npm run build:umd && npm run build:umd:min",
@@ -32,14 +37,18 @@
   },
   "repository": {
     "type": "git",
-    "repo": "https://github.com/danne931/has-required-props.git"
+    "url": "https://github.com/danne931/has-required-props.git"
   },
   "author": "Daniel Eisenbarger <danieleisenbarger@gmail.com> (https://github.com/danne931)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/danne931/has-required-props/issues"
   },
-  "keywords": [],
+  "keywords": [
+    "has required props",
+    "contains required props",
+    "required props"
+  ],
   "standard": {
     "parser": "babel-eslint"
   },
