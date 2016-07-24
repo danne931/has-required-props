@@ -20,8 +20,8 @@ test('false if no args passed', t => {
   t.false(hasRequiredProps())
 })
 
-test('true if non-empty val passed for props & empty val passed for requiredProps', t => {
-  t.true(hasRequiredProps(null, { a: 1 }))
+test('false if non-empty val passed for props & empty val passed for requiredProps', t => {
+  t.false(hasRequiredProps(null, { a: 1 }))
 })
 
 test('false if empty val passed for props', t => {
@@ -71,4 +71,11 @@ test('only check own props', t => {
 
   o.a = 3
   t.true(hasRequiredProps('a', o))
+})
+
+test('we only care about strings & arrays as requiredProps', t => {
+  const o = { a: 1 }
+  t.true(hasRequiredProps('a', o))
+  t.false(hasRequiredProps(3, o))
+  t.false(hasRequiredProps(o, o))
 })
