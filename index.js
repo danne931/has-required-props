@@ -13,14 +13,13 @@ const _hasRequiredProps = requiredProps => props =>
     : requiredProps.every(key => get(props, key) !== undefined)
 
 export default function hasRequiredProps (requiredProps, props) {
-  if (isEmpty(props)) return false
+  if (typeof props !== 'object' || isEmpty(props)) return false
   if (typeof requiredProps !== 'string' &&
     !Array.isArray(requiredProps) ||
+    typeof requiredProps === 'string' &&
+    requiredProps.trim() === '' ||
     isEmpty(requiredProps)
-  ) return false
-  if (typeof requiredProps === 'string' &&
-    requiredProps.trim() === ''
-  ) return false
+   ) return false
 
   const check = _hasRequiredProps(requiredProps)
   return Array.isArray(props) ? props.every(check) : check(props)
