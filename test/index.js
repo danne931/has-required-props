@@ -42,6 +42,18 @@ test('false if props are missing required props', t => {
   t.false(hasRequiredProps(requiredProps, o))
 })
 
+test('false if any prop in props of requiredProps is undefined', t => {
+  const requiredProps = ['a']
+  const props = { a: undefined }
+  t.false(hasRequiredProps(requiredProps, props))
+})
+
+test('true if prop in props of requiredProps is null', t => {
+  const requiredProps = ['a']
+  const props = { a: null }
+  t.true(hasRequiredProps(requiredProps, props))
+})
+
 test('true if all required props on object', t => {
   const requiredProps = ['a']
   t.true(hasRequiredProps(requiredProps, o))
