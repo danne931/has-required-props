@@ -48,11 +48,11 @@ test('true if all required props on object', t => {
 })
 
 test('test nested prop validation', t => {
-  const requiredProps = ['a.b', 'a.c.d', 'e', 'f[0]', 'f[1].g', 'f[1].h', 'f[1].i']
+  const requiredProps = ['a.b', 'a.c.d', 'e', 'f.0', 'f.1.g', 'f.1.h', 'f.1.i']
   t.true(hasRequiredProps(requiredProps, nested))
 })
 
-test('true if missing required props on some object in array', t => {
+test('false if missing required props on some object in array', t => {
   const arr = [o, { a: 1 }]
   const requiredProps = ['a', 'b']
   t.false(hasRequiredProps(requiredProps, arr))
@@ -86,4 +86,5 @@ test('we only care about strings & arrays as requiredProps', t => {
   t.true(hasRequiredProps('a', o))
   t.false(hasRequiredProps(3, o))
   t.false(hasRequiredProps(o, o))
+  t.false(hasRequiredProps(() => 3, o))
 })

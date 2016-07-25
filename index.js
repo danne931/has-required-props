@@ -1,4 +1,4 @@
-import get from 'lodash/get'
+import get from 'get-value'
 
 const isEmpty = props => {
   if (props == null) return true
