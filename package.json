@@ -47,7 +47,12 @@
   "keywords": [
     "has required props",
     "contains required props",
-    "required props"
+    "required props",
+    "props",
+    "properties",
+    "property check",
+    "check properties",
+    "check props"
   ],
   "standard": {
     "parser": "babel-eslint"
