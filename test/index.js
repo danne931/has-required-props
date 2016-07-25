@@ -13,7 +13,15 @@ const nested = {
       d: 2
     }
   },
-  e: 3
+  e: 3,
+  f: [
+    3,
+    {
+      g: 1,
+      h: {},
+      i: null
+    }
+  ]
 }
 
 test('false if no args passed', t => {
@@ -40,7 +48,7 @@ test('true if all required props on object', t => {
 })
 
 test('test nested prop validation', t => {
-  const requiredProps = ['a.b', 'a.c.d', 'e']
+  const requiredProps = ['a.b', 'a.c.d', 'e', 'f[0]', 'f[1].g', 'f[1].h', 'f[1].i']
   t.true(hasRequiredProps(requiredProps, nested))
 })
 
