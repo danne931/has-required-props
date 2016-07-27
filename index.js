@@ -19,7 +19,7 @@ export default function hasRequiredProps (requiredProps, props) {
     typeof requiredProps === 'string' &&
     requiredProps.trim() === '' ||
     isEmpty(requiredProps)
-   ) return false
+  ) return false
 
   const check = _hasRequiredProps(requiredProps)
   return Array.isArray(props) ? props.every(check) : check(props)
