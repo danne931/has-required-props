@@ -3,6 +3,7 @@
 Assert that your object props have non-undefined values for each required prop
 
 [![Build Status](https://travis-ci.org/danne931/has-required-props.svg?branch=master)](https://travis-ci.org/danne931/has-required-props)
+[![Coverage Status](https://coveralls.io/repos/github/danne931/has-required-props/badge.svg)](https://coveralls.io/github/danne931/has-required-props)
 [![npm version](https://img.shields.io/npm/v/has-required-props.svg?style=flat-square)](https://www.npmjs.com/package/has-required-props)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
