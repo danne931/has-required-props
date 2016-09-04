@@ -15,8 +15,8 @@ $ npm install --save has-required-props
 ```
 
 Not using Node or a module bundler? Use a UMD build via the `<script>` tag.
-- [https://npmcdn.com/has-required-props/dist/has-required-props.js](https://npmcdn.com/has-required-props/dist/has-required-props.js)  
-- [https://npmcdn.com/has-required-props/dist/has-required-props.min.js](https://npmcdn.com/has-required-props/dist/has-required-props.min.js)
+- [https://unpkg.com/has-required-props/dist/has-required-props.js](https://unpkg.com/has-required-props/dist/has-required-props.js)  
+- [https://unpkg.com/has-required-props/dist/has-required-props.min.js](https://unpkg.com/has-required-props/dist/has-required-props.min.js)
 
 ## Usage
 
