@@ -15,8 +15,8 @@ const _hasRequiredProps = requiredProps => props =>
 export default function hasRequiredProps (requiredProps, props) {
   if (typeof props !== 'object' ||
     isEmpty(props) ||
-    typeof requiredProps !== 'string' && !Array.isArray(requiredProps) ||
-    typeof requiredProps === 'string' && requiredProps.trim() === '' ||
+    (typeof requiredProps !== 'string' && !Array.isArray(requiredProps)) ||
+    (typeof requiredProps === 'string' && requiredProps.trim() === '') ||
     isEmpty(requiredProps)
   ) return false
 
