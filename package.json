@@ -1,6 +1,6 @@
 {
   "name": "has-required-props",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Assert that your object props have non-undefined values for each required prop",
   "main": "lib/index.js",
   "files": [
